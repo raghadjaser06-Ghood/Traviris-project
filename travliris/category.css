@@ -1,0 +1,386 @@
+/* ========== Category page ========== */
+.category {
+  padding: 110px 120px 180px;
+}
+
+.category-title {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.back {
+  font-size: 40px;
+  transition: 0.3s;
+}
+
+.back:hover {
+  transform: translateX(-6px);
+}
+
+.section-title {
+  font-size: 34px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+/* ========== Rows ========== */
+.row-wrap {
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.places-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scrollbar-width: none; /* hide scrollbar */
+}
+
+.places-row::-webkit-scrollbar {
+  display: none;
+}
+
+.arrow {
+  position: absolute;
+  right: -55px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #0c342c;
+  cursor: pointer;
+}
+
+/* ========== Card ========== */
+.place-card {
+  display: flex;
+  gap: 50px;
+  flex-shrink: 0;
+  background-color: #b4c6aa;
+  border-radius: 16px;
+  padding: 28px 27px 22px;
+}
+
+.place-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.place-main img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.place-main h3 {
+  font-weight: 700;
+  margin-top: 18px;
+}
+
+.place-main p {
+  margin: 8px 0 18px;
+}
+
+.more-btn,
+.plan-btn {
+  margin-top: auto;
+  align-self: center;
+  background-color: #0c342c;
+  color: #f1edd9;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.more-btn:hover,
+.plan-btn:hover {
+  background-color: #f1edd9;
+  color: #0c342c;
+}
+
+/* big cards (hidden places) */
+.hidden-row .place-card {
+  width: 590px;
+}
+
+.hidden-row .place-main {
+  width: 536px;
+  flex-shrink: 0;
+}
+
+.hidden-row .place-main img {
+  height: 390px;
+}
+
+.hidden-row .place-main h3 {
+  font-size: 24px;
+}
+
+.hidden-row .place-main p {
+  font-size: 15px;
+}
+
+.hidden-row .more-btn {
+  font-size: 19px;
+  padding: 8px 65px;
+}
+
+/* small cards (famous spots) */
+.famous-row .place-card {
+  width: 285px;
+}
+
+.famous-row .place-main {
+  width: 231px;
+  flex-shrink: 0;
+}
+
+.famous-row .place-main img {
+  height: 175px;
+}
+
+.famous-row .place-main h3 {
+  font-size: 19px;
+}
+
+.famous-row .place-main p {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.famous-row .more-btn {
+  width: 100%;
+  font-size: 18px;
+  padding: 5px;
+}
+
+/* ========== Details (hidden until open) ========== */
+.place-details {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  flex: 1;
+  padding-top: 20px;
+}
+
+.place-details h3 {
+  font-size: 30px;
+  font-weight: 700;
+  padding-right: 40px;
+}
+
+.place-details p {
+  font-size: 21px;
+  margin-bottom: 18px;
+}
+
+.place-details ul {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.place-details li {
+  font-size: 21px;
+  margin-bottom: 14px;
+  padding-left: 28px;
+  position: relative;
+}
+
+.place-details li i {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  font-size: 18px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  font-size: 40px;
+  line-height: 1;
+  color: #0c342c;
+  cursor: pointer;
+}
+
+.plan-btn {
+  font-size: 19px;
+  padding: 8px 35px;
+}
+
+/* ========== Open card ========== */
+.has-open .place-card {
+  display: none; /* hide the other cards in the same row */
+}
+
+.has-open .place-card.open {
+  display: flex;
+  width: 100%;
+}
+
+.open .place-details {
+  display: flex;
+}
+
+.open .more-btn {
+  display: none;
+}
+
+/* ========== Tablet & Mobile ========== */
+@media (max-width: 1200px) {
+  .category {
+    padding: 70px 40px 120px;
+  }
+
+  .arrow {
+    right: -35px;
+  }
+}
+
+@media (max-width: 700px) {
+  .category {
+    padding: 50px 16px 90px;
+  }
+
+  .category-title {
+    font-size: 32px;
+    gap: 15px;
+  }
+
+  .back {
+    font-size: 26px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .hidden-row .place-card {
+    width: 85%;
+  }
+
+  .hidden-row .place-main {
+    width: 100%;
+  }
+
+  .hidden-row .place-main img {
+    height: 220px;
+  }
+
+  .hidden-row .more-btn {
+    padding: 8px 40px;
+  }
+
+  .famous-row .place-card {
+    width: 70%;
+  }
+
+  .famous-row .place-main {
+    width: 100%;
+  }
+
+  /* open card: details go under the photo */
+  .has-open .place-card.open {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .place-details h3 {
+    font-size: 22px;
+  }
+
+  .place-details p,
+  .place-details li {
+    font-size: 16px;
+  }
+}
+
+/* ========== Animations ========== */
+
+/* the title comes from the left when the page opens */
+.category-title {
+  animation: fromLeft 0.8s ease-out both;
+}
+
+@keyframes fromLeft {
+  from { opacity: 0; filter: blur(10px); transform: translateX(-40px); }
+  to   { opacity: 1; filter: blur(0); transform: translateX(0); }
+}
+
+/* the photo zooms a little on hover */
+.place-main img {
+  transition: 0.5s;
+}
+
+.place-card:hover .place-main img {
+  transform: scale(1.03);
+  filter: saturate(1.2);
+}
+
+/* the details slide in from the right when the card opens */
+.open .place-details {
+  animation: detailsIn 0.5s ease-out;
+}
+
+@keyframes detailsIn {
+  from { opacity: 0; filter: blur(10px); transform: translateX(40px); }
+  to   { opacity: 1; filter: blur(0); transform: translateX(0); }
+}
+
+/* the arrow moves a little to say "there is more" */
+.arrow {
+  animation: arrowMove 1.5s ease-in-out infinite;
+}
+
+@keyframes arrowMove {
+  0%, 100% { margin-right: 0; }
+  50%      { margin-right: -8px; }
+}
+
+/* ========== Favorite heart ========== */
+.place-main {
+  position: relative;
+}
+
+.fav-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #f1edd9;
+  color: #0c342c;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fav-btn:hover {
+  transform: scale(1.15);
+}
+
+.fav-btn.liked {
+  color: #c0392b;
+  animation: heartPop 0.4s;
+}
+
+@keyframes heartPop {
+  50% { transform: scale(1.4); }
+}

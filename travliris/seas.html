@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravIris | Seas &amp; Valleys</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="category.css">
+</head>
+<body>
+
+  <!-- ========== Header ========== -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="TravIris logo">
+    </a>
+
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="index.html#categories" class="active">Explore</a>
+      <a href="planning.html">Planning</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <a href="profile.html" class="user">
+      <img src="images/avatar.png" alt="User">
+    </a>
+  </header>
+
+  <!-- ========== Category ========== -->
+  <main class="category">
+    <h1 class="category-title">
+      <a href="index.html#categories" class="back"><i class="fa-solid fa-arrow-left"></i></a>
+      Seas &amp; Valleys
+    </h1>
+
+    <!-- ===== Jordan&rsquo;s Hidden Places ===== -->
+    <h2 class="section-title reveal">Jordan&rsquo;s Hidden Places</h2>
+    <div class="row-wrap reveal">
+      <div class="places-row hidden-row">
+
+        <!-- Hujrah Village -->
+        <div class="place-card">
+          <div class="place-main">
+            <button class="fav-btn" onclick="toggleFavorite(this)">&#9825;</button>
+            <img src="images/hujrah.jpg" alt="Hujrah Village">
+            <h3>Hujrah Village</h3>
+            <p>A modern leisure destination near Queen Alia International Airport featuring waterside dining, cafes, and a central artificial river for boat rides.</p>
+            <button class="more-btn" onclick="openCard(this)">More Info</button>
+          </div>
+
+          <div class="place-details">
+            <button class="close-btn" onclick="closeCard(this)">&times;</button>
+            <h3>River Cruise &amp; Pedal Boats</h3>
+            <p>Cruise gentle waters at your own speed, enjoy colorful ambient lighting during evening hours, and soak in the bustling atmosphere of the complex.</p>
+            <ul>
+              <li><i class="fa-solid fa-location-dot"></i> <b>Location:</b> Hujrah Village, near Queen Alia International Airport.</li>
+              <li><i class="fa-solid fa-dollar-sign"></i> <b>Price:</b> Only 5 JOD (~$7 USD) per boat slot.</li>
+              <li><i class="fa-solid fa-person-hiking"></i> <b>Activities:</b> Pedal boat rides and self-paced river cruising.</li>
+              <li><i class="fa-solid fa-utensils"></i> <b>Services:</b> Waterside dining, cafes, and evening ambient lighting.</li>
+            </ul>
+            <button class="plan-btn" onclick="addToPlan(this)">Add to the plan</button>
+          </div>
+        </div>
+
+        <!-- Wadi Al Ghuwayr -->
+        <div class="place-card">
+          <div class="place-main">
+            <button class="fav-btn" onclick="toggleFavorite(this)">&#9825;</button>
+            <img src="images/ghuwayr.jpg" alt="Wadi Al Ghuwayr">
+            <h3>Wadi Al Ghuwayr</h3>
+            <p>A hidden paradise featuring crystal-clear running streams, lush hanging palm trees, and dramatic red sandstone canyon walls.</p>
+            <button class="more-btn" onclick="openCard(this)">More Info</button>
+          </div>
+
+          <div class="place-details">
+            <button class="close-btn" onclick="closeCard(this)">&times;</button>
+            <h3>Canyon Walk &amp; Water Trail</h3>
+            <p>Walk through shallow streams between towering sandstone walls, pass hanging gardens and small waterfalls, and enjoy one of Jordan's quietest canyon trails.</p>
+            <ul>
+              <li><i class="fa-solid fa-location-dot"></i> <b>Location:</b> Near Feynan, Tafilah Governorate.</li>
+              <li><i class="fa-solid fa-dollar-sign"></i> <b>Price:</b> Guided trips from about 35 JOD per person.</li>
+              <li><i class="fa-solid fa-person-hiking"></i> <b>Activities:</b> Canyon hiking, water walking, and photography.</li>
+              <li><i class="fa-solid fa-utensils"></i> <b>Services:</b> Local guides and nearby Feynan Ecolodge. Best from April to October.</li>
+            </ul>
+            <button class="plan-btn" onclick="addToPlan(this)">Add to the plan</button>
+          </div>
+        </div>
+
+      </div>
+      <button class="arrow" onclick="scrollRow(this)"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <!-- ===== Most Famous Spots ===== -->
+    <h2 class="section-title reveal">Most Famous Spots</h2>
+    <div class="row-wrap reveal">
+      <div class="places-row famous-row">
+
+        <!-- The Dead Sea -->
+        <div class="place-card">
+          <div class="place-main">
+            <button class="fav-btn" onclick="toggleFavorite(this)">&#9825;</button>
+            <img src="images/deadsea.jpg" alt="The Dead Sea">
+            <h3>The Dead Sea</h3>
+            <p>The lowest point on Earth, famous for effortless floating and mineral-rich mud.</p>
+            <button class="more-btn" onclick="openCard(this)">More Info</button>
+          </div>
+
+          <div class="place-details">
+            <button class="close-btn" onclick="closeCard(this)">&times;</button>
+            <h3>Float &amp; Mud Spa Day</h3>
+            <p>Float easily on the salty water, cover yourself in natural mud, and watch the sunset over the hills of the West Bank.</p>
+            <ul>
+              <li><i class="fa-solid fa-location-dot"></i> <b>Location:</b> Dead Sea shore, about 50 minutes from Amman.</li>
+              <li><i class="fa-solid fa-dollar-sign"></i> <b>Price:</b> Public beaches from about 20 JOD per person.</li>
+              <li><i class="fa-solid fa-person-hiking"></i> <b>Activities:</b> Floating, mud treatment, and sunset views.</li>
+              <li><i class="fa-solid fa-utensils"></i> <b>Services:</b> Resorts, spas, showers, and restaurants.</li>
+            </ul>
+            <button class="plan-btn" onclick="addToPlan(this)">Add to the plan</button>
+          </div>
+        </div>
+
+        <!-- Wadi Mujib -->
+        <div class="place-card">
+          <div class="place-main">
+            <button class="fav-btn" onclick="toggleFavorite(this)">&#9825;</button>
+            <img src="images/mujib.jpg" alt="Wadi Mujib">
+            <h3>Wadi Mujib</h3>
+            <p>A spectacular river canyon famous for water-trekking, hiking, and waterfalls.</p>
+            <button class="more-btn" onclick="openCard(this)">More Info</button>
+          </div>
+
+          <div class="place-details">
+            <button class="close-btn" onclick="closeCard(this)">&times;</button>
+            <h3>The Siq Water Trail</h3>
+            <p>Walk and swim through a narrow canyon, climb small waterfalls with ropes, and finish at a big waterfall at the end of the trail.</p>
+            <ul>
+              <li><i class="fa-solid fa-location-dot"></i> <b>Location:</b> Mujib Biosphere Reserve, Dead Sea road.</li>
+              <li><i class="fa-solid fa-dollar-sign"></i> <b>Price:</b> About 21 JOD per person (Siq Trail).</li>
+              <li><i class="fa-solid fa-person-hiking"></i> <b>Activities:</b> Water trekking, canyoning, and swimming.</li>
+              <li><i class="fa-solid fa-utensils"></i> <b>Services:</b> Visitor center, life jackets, lockers, and chalets. Open April to October.</li>
+            </ul>
+            <button class="plan-btn" onclick="addToPlan(this)">Add to the plan</button>
+          </div>
+        </div>
+
+        <!-- Aqaba (Red Sea) -->
+        <div class="place-card">
+          <div class="place-main">
+            <button class="fav-btn" onclick="toggleFavorite(this)">&#9825;</button>
+            <img src="images/aqaba.jpg" alt="Aqaba (Red Sea)">
+            <h3>Aqaba (Red Sea)</h3>
+            <p>Jordan's coastal hub, popular for beaches, swimming, and coral reef diving.</p>
+            <button class="more-btn" onclick="openCard(this)">More Info</button>
+          </div>
+
+          <div class="place-details">
+            <button class="close-btn" onclick="closeCard(this)">&times;</button>
+            <h3>Snorkeling &amp; Glass Boat Tours</h3>
+            <p>Discover colorful coral reefs and fish in the Red Sea, relax on sunny beaches, and enjoy fresh seafood by the water.</p>
+            <ul>
+              <li><i class="fa-solid fa-location-dot"></i> <b>Location:</b> Aqaba, south of Jordan on the Red Sea.</li>
+              <li><i class="fa-solid fa-dollar-sign"></i> <b>Price:</b> Public beaches are free, boat trips from about 10 JOD.</li>
+              <li><i class="fa-solid fa-person-hiking"></i> <b>Activities:</b> Snorkeling, diving, glass-bottom boats, and swimming.</li>
+              <li><i class="fa-solid fa-utensils"></i> <b>Services:</b> Hotels, dive centers, and seafood restaurants.</li>
+            </ul>
+            <button class="plan-btn" onclick="addToPlan(this)">Add to the plan</button>
+          </div>
+        </div>
+
+        <!-- Ma'in Hot Springs -->
+        <div class="place-card">
+          <div class="place-main">
+            <button class="fav-btn" onclick="toggleFavorite(this)">&#9825;</button>
+            <img src="images/main.jpg" alt="Ma'in Hot Springs">
+            <h3>Ma'in Hot Springs</h3>
+            <p>A natural desert oasis featuring warm, mineral-rich thermal waterfalls.</p>
+            <button class="more-btn" onclick="openCard(this)">More Info</button>
+          </div>
+
+          <div class="place-details">
+            <button class="close-btn" onclick="closeCard(this)">&times;</button>
+            <h3>Thermal Waterfalls &amp; Pools</h3>
+            <p>Relax under warm natural waterfalls and soak in mineral pools surrounded by desert mountains.</p>
+            <ul>
+              <li><i class="fa-solid fa-location-dot"></i> <b>Location:</b> Ma'in, about 30 minutes from Madaba.</li>
+              <li><i class="fa-solid fa-dollar-sign"></i> <b>Price:</b> Day pass from about 25 JOD per person.</li>
+              <li><i class="fa-solid fa-person-hiking"></i> <b>Activities:</b> Bathing in hot pools and relaxing under the waterfalls.</li>
+              <li><i class="fa-solid fa-utensils"></i> <b>Services:</b> Resort spa, restaurant, and changing rooms.</li>
+            </ul>
+            <button class="plan-btn" onclick="addToPlan(this)">Add to the plan</button>
+          </div>
+        </div>
+
+      </div>
+      <button class="arrow" onclick="scrollRow(this)"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="footer-logo reveal">
+      <img src="images/logo-icon.png" alt="TravIris logo">
+      <span>TravIris</span>
+    </div>
+
+    <hr>
+
+    <div class="social reveal">
+      <span>follow us on</span>
+      <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Firebase: to know if the user is logged in -->
+  <script type="module" src="firebase.js"></script>
+  <!-- Firestore: trips and favorites -->
+  <script type="module" src="data.js"></script>
+</body>
+</html>

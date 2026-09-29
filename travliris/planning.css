@@ -1,0 +1,882 @@
+/* ========== Hero ========== */
+.plan-hero {
+  position: relative;
+  margin-top: 30px;
+  overflow: hidden; /* so the zoom stays inside */
+}
+
+.plan-hero-media {
+  position: relative;
+  animation: heroZoom 12s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+.plan-hero-img {
+  display: block;
+  width: 100%;
+}
+
+/* the svg sits exactly on top of the image */
+.map-route {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.plan-hero-text {
+  position: absolute;
+  right: 8.5%;
+  bottom: 12%;
+  text-align: right;
+  color: #f1edd9;
+}
+
+.plan-hero-text p {
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.plan-hero-text h1 {
+  font-size: 62px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* ========== Hero text animation ========== */
+/* the small text slides in from the right, then the title comes up */
+.plan-hero-text p {
+  opacity: 0;
+  animation: slideLeft 0.8s ease-out 0.4s forwards;
+}
+
+.plan-hero-text h1 {
+  opacity: 0;
+  animation: slideUp 0.8s ease-out 0.9s forwards;
+}
+
+/* a small line grows under the title */
+.plan-hero-text h1::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 0;
+  margin-left: auto;
+  margin-top: 8px;
+  background-color: #b4c6aa;
+  border-radius: 2px;
+  animation: growLine 0.8s ease-out 1.7s forwards;
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; filter: blur(10px); transform: translateX(40px); }
+  to   { opacity: 1; filter: blur(0); transform: translateX(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; filter: blur(10px); transform: translateY(30px); }
+  to   { opacity: 1; filter: blur(0); transform: translateY(0); }
+}
+
+@keyframes growLine {
+  to { width: 45%; }
+}
+
+/* ========== Map animation ========== */
+
+/* 1) the stars pop one by one */
+.star {
+  fill: #b4c6aa;
+  stroke: #0c342c;
+  stroke-width: 1.5;
+  transform: scale(0);
+  animation: pop 0.5s forwards;
+}
+
+.star-1 { animation-delay: 0.3s; }
+.star-2 { animation-delay: 0.6s; }
+.star-3 { animation-delay: 0.9s; }
+.star-4 { animation-delay: 1.2s; }
+
+@keyframes pop {
+  0%   { transform: scale(0); }
+  70%  { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+/* 2) then the lines are drawn between them */
+.route-line {
+  fill: none;
+  stroke: #0c342c;
+  stroke-width: 2.5;
+  stroke-dasharray: 1;   /* pathLength="1" in the html */
+  stroke-dashoffset: 1;  /* start hidden */
+  animation: draw 0.7s forwards;
+}
+
+.line-1 { animation-delay: 1.8s; }
+.line-2 { animation-delay: 2.5s; }
+.line-3 { animation-delay: 3.2s; }
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ========== Page ========== */
+.planning {
+  padding: 70px 120px 150px;
+}
+
+.center {
+  text-align: center;
+}
+
+.dark-btn,
+.light-btn {
+  font-family: "Poppins", sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  width: 320px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 2px solid #0c342c;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dark-btn {
+  background-color: #0c342c;
+  color: #f1edd9;
+}
+
+.light-btn {
+  background-color: transparent;
+  color: #0c342c;
+}
+
+.dark-btn:hover {
+  background-color: #1c5a4c;
+}
+
+.light-btn:hover {
+  background-color: #0c342c;
+  color: #f1edd9;
+}
+
+/* ========== Trip Details ========== */
+.trip-details,
+.suggested-box {
+  border: 3px solid #0c342c;
+  border-radius: 12px;
+  padding: 15px 40px 45px;
+}
+
+.trip-details legend,
+.suggested-box legend {
+  font-size: 36px;
+  font-weight: 700;
+  padding-right: 12px;
+}
+
+.trip-details h4 {
+  font-size: 21px;
+  font-weight: 600;
+  margin: 30px 0 15px;
+}
+
+.pills {
+  display: flex;
+  gap: 38px;
+}
+
+.pill {
+  width: 255px;
+  height: 46px;
+  background-color: #b4c6aa;
+  border: none;
+  border-radius: 23px;
+  padding: 0 15px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: #0c342c;
+}
+
+.pill::placeholder {
+  color: #0c342c;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.counter span {
+  flex: 1;
+}
+
+.counter button {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: none;
+  background-color: #0c342c;
+  color: #f1edd9;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* ========== Days Timeline ========== */
+.plan-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-top: 90px;
+}
+
+.hint {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.tickets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.ticket {
+  display: flex;
+  gap: 3px;
+  min-height: 170px;
+  cursor: grab;
+}
+
+.ticket-main {
+  flex: 1;
+  position: relative;
+  background-color: #0c342c;
+  color: #f1edd9;
+  border-radius: 12px 0 0 12px;
+  padding: 35px 28px 15px;
+}
+
+.ticket-main h3 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.ticket-remove {
+  position: absolute;
+  top: 6px;
+  left: 14px;
+  background: none;
+  border: none;
+  color: #f1edd9;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.ticket-btn {
+  background-color: #b4c6aa;
+  color: #0c342c;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 28px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ticket-btn:hover {
+  background-color: #f1edd9;
+}
+
+.ticket-stub {
+  width: 67px;
+  background-color: #0c342c;
+  color: #f1edd9;
+  border-radius: 0 12px 12px 0;
+  border-left: 2px dashed #f1edd9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* vertical "Day 1" text */
+.ticket-stub span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 32px;
+}
+
+/* while dragging */
+.dragging {
+  opacity: 0.4;
+}
+
+.drag-over {
+  outline: 3px dashed #b4c6aa;
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+.empty-msg {
+  display: none;
+  font-size: 18px;
+  padding: 30px;
+  border: 2px dashed #b4c6aa;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.empty-msg a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.add-trip-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 318px;
+  margin: 35px 0 70px;
+  padding: 10px 22px;
+  background: none;
+  border: 3px solid #b4c6aa;
+  border-radius: 14px;
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  color: #0c342c;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-trip-btn span {
+  font-size: 34px;
+  line-height: 1;
+}
+
+.add-trip-btn:hover {
+  background-color: #b4c6aa;
+}
+
+/* ========== Suggested Plan ========== */
+.suggested {
+  display: none; /* shown after "Create Trip" */
+  margin-top: 120px;
+}
+
+.suggested-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.days-list {
+  border-left: 3px solid #b4c6aa;
+  margin: 25px 0 0 15px;
+  padding-left: 25px;
+}
+
+.day {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* the circle on the line */
+.day::before {
+  content: "";
+  position: absolute;
+  left: -38px;
+  top: 10px;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background-color: #b4c6aa;
+}
+
+.day h3 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.day-date {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+.day ul {
+  padding-left: 25px;
+  font-size: 18px;
+}
+
+.route-icon {
+  width: 330px;
+  margin-right: 40px;
+}
+
+.total {
+  display: flex;
+  gap: 170px;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.total h3 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.total p {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.total-group {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.note {
+  font-style: italic;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.plan-actions {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 45px;
+}
+
+/* ========== Popups ========== */
+.popup-bg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(12, 52, 44, 0.35);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-bg.show {
+  display: flex;
+}
+
+.popup {
+  position: relative;
+  width: 720px;
+  max-width: 90%;
+  background-color: #b4c6aa;
+  border-radius: 16px;
+  padding: 45px 45px 35px;
+}
+
+.popup-small {
+  width: 505px;
+}
+
+.popup h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.popup-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: #0c342c;
+  color: #b4c6aa;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.popup label {
+  display: block;
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* dark select with a small arrow */
+.select-box {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.select-box select {
+  width: 100%;
+  appearance: none;
+  background-color: #0c342c;
+  color: #f1edd9;
+  border: none;
+  border-radius: 14px;
+  padding: 16px 22px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.select-box::after {
+  content: "▼";
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f1edd9;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.popup-place {
+  text-align: center;
+  font-size: 18px;
+  margin: -15px 0 20px;
+}
+
+.checks {
+  padding-left: 40px;
+  margin-bottom: 30px;
+}
+
+.checks label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.checks input {
+  width: 22px;
+  height: 22px;
+  accent-color: #0c342c;
+}
+
+.popup-text {
+  font-size: 26px;
+  margin-bottom: 40px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.popup-buttons button {
+  width: 280px;
+}
+
+/* ========== Print (Save as PDF) - only the suggested plan ========== */
+@media print {
+  .header,
+  .plan-hero,
+  .trip-details,
+  .plan-title,
+  .hint,
+  .tickets,
+  .empty-msg,
+  .add-trip-btn,
+  .center,
+  .footer {
+    display: none !important;
+  }
+
+  .suggested {
+    margin-top: 0;
+  }
+}
+
+/* ========== Tablet ========== */
+@media (max-width: 1200px) {
+  .planning {
+    padding: 60px 40px 120px;
+  }
+
+  .tickets {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .plan-hero-text h1 {
+    font-size: 44px;
+  }
+
+  .plan-hero-text p {
+    font-size: 18px;
+  }
+
+  .route-icon {
+    width: 260px;
+  }
+
+  .total {
+    gap: 60px;
+  }
+}
+
+/* ========== Mobile ========== */
+@media (max-width: 700px) {
+  .planning {
+    padding: 40px 16px 90px;
+  }
+
+  .plan-hero-text p {
+    font-size: 11px;
+  }
+
+  .plan-hero-text h1 {
+    font-size: 22px;
+  }
+
+  .trip-details,
+  .suggested-box {
+    padding: 10px 18px 30px;
+  }
+
+  .trip-details legend,
+  .suggested-box legend {
+    font-size: 26px;
+  }
+
+  .pills {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pill {
+    width: 100%;
+  }
+
+  .plan-title {
+    font-size: 30px;
+    margin-top: 60px;
+  }
+
+  .tickets {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-main h3 {
+    font-size: 24px;
+  }
+
+  .add-trip-btn,
+  .dark-btn,
+  .light-btn {
+    width: 100%;
+  }
+
+  .suggested-content {
+    flex-direction: column;
+  }
+
+  .route-icon {
+    width: 180px;
+    margin: 20px 0 0;
+  }
+
+  .day h3 {
+    font-size: 22px;
+  }
+
+  .total {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .total h3 {
+    font-size: 24px;
+  }
+
+  .plan-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .popup {
+    padding: 40px 20px 25px;
+  }
+
+  .popup h2 {
+    font-size: 26px;
+  }
+
+  .popup label,
+  .checks label,
+  .popup-text {
+    font-size: 18px;
+  }
+
+  .popup-buttons {
+    flex-direction: column;
+  }
+
+  .popup-buttons button {
+    width: 100%;
+  }
+}
+
+/* ========== Animations ========== */
+
+/* tickets pop in */
+.ticket {
+  animation: ticketIn 0.4s ease-out; /* no "both", so the hover can move it after */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+@keyframes ticketIn {
+  from { opacity: 0; filter: blur(10px); transform: scale(0.9) translateY(20px); }
+  to   { opacity: 1; filter: blur(0); transform: scale(1) translateY(0); }
+}
+
+/* ===== ticket hover ===== */
+
+/* 1) the ticket goes up, turns a little, and gets a shadow */
+.ticket:hover {
+  transform: translateY(-10px) rotate(-1.5deg);
+  box-shadow: 0 18px 28px rgba(12, 52, 44, 0.35);
+  border-radius: 12px;
+}
+
+/* 2) the "Day" part changes color */
+.ticket-stub {
+  transition: 0.3s;
+}
+
+.ticket:hover .ticket-stub {
+  background-color: #b4c6aa;
+  color: #0c342c;
+  border-left-color: #0c342c;
+}
+
+.ticket-stub span {
+  transition: 0.3s;
+}
+
+.ticket:hover .ticket-stub span {
+  transform: rotate(180deg) scale(1.12);
+}
+
+.ticket:active {
+  cursor: grabbing;
+}
+
+/* popups come in with a small zoom */
+.popup-bg.show .popup {
+  animation: popupIn 0.35s ease-out;
+}
+
+@keyframes popupIn {
+  from { opacity: 0; filter: blur(10px); transform: scale(0.85); }
+  to   { opacity: 1; filter: blur(0); transform: scale(1); }
+}
+
+/* the days in the suggested plan show one after the other */
+.day {
+  animation: revealUp 0.6s ease-out both;
+}
+
+.day:nth-child(2) { animation-delay: 0.2s; }
+.day:nth-child(3) { animation-delay: 0.4s; }
+.day:nth-child(4) { animation-delay: 0.6s; }
+.day:nth-child(5) { animation-delay: 0.8s; }
+.day:nth-child(6) { animation-delay: 1s; }
+
+/* the route icon floats up and down */
+.route-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+/* ========== Travel offices popup ========== */
+.office {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background-color: #f1edd9;
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+  transition: 0.3s;
+}
+
+.office:hover {
+  transform: translateX(6px);
+}
+
+.office h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.office p {
+  font-size: 15px;
+}
+
+.office-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.office-btn {
+  background-color: #0c342c;
+  color: #f1edd9;
+  border: 2px solid #0c342c;
+  border-radius: 14px;
+  padding: 6px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.office-btn.light {
+  background-color: transparent;
+  color: #0c342c;
+}
+
+.office-btn:hover {
+  background-color: #b4c6aa;
+  color: #0c342c;
+}
+
+@media (max-width: 700px) {
+  .office {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravIris | Profile</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+  <!-- ========== Header ========== -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="TravIris logo">
+    </a>
+
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="index.html#categories">Explore</a>
+      <a href="planning.html">Planning</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <a href="profile.html" class="user user-active">
+      <img src="images/avatar.png" alt="Profile">
+    </a>
+  </header>
+
+  <main class="profile-page">
+
+    <!-- ========== Profile card ========== -->
+    <section class="profile-card">
+
+      <div class="profile-top">
+        <!-- the picture: default icon, or the uploaded image -->
+        <div class="profile-pic">
+          <svg id="defaultPic" viewBox="0 0 100 100"><circle cx="50" cy="34" r="17" /><path d="M18 82 Q18 56 50 56 Q82 56 82 82 Z" /></svg>
+          <img id="userPic" src="" alt="Profile picture">
+        </div>
+
+        <h1>Profile Picture</h1>
+
+        <div class="pic-buttons">
+          <!-- the label opens the hidden file input -->
+          <label for="picInput" class="small-btn dark">Upload Image</label>
+          <input type="file" id="picInput" accept="image/*" onchange="uploadImage()">
+          <button class="small-btn light" onclick="removeImage()">Remove</button>
+        </div>
+      </div>
+
+      <div class="fields">
+        <div class="field">
+          <label for="firstName">First Name</label>
+          <!-- readonly: the name comes from the user's login data -->
+          <input type="text" id="firstName" placeholder="First Name" readonly title="Your name comes from your account">
+        </div>
+
+        <div class="field">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" placeholder="Last Name" readonly title="Your name comes from your account">
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <!-- the email comes from the account (Firebase Authentication) -->
+          <input type="email" id="email" placeholder="name@gmail.com" readonly>
+        </div>
+
+        <div class="field">
+          <label>Password</label>
+          <!-- we never show the password. Firebase sends a reset link instead -->
+          <button type="button" class="reset-btn" id="resetPasswordBtn">Change password</button>
+        </div>
+      </div>
+
+      <div class="stats">
+        <p><i class="fa-solid fa-suitcase-rolling"></i> Total Trips <b id="totalTrips">0</b></p>
+        <p><i class="fa-solid fa-route"></i> Places Visited <b id="placesVisited">0</b></p>
+      </div>
+      <button class="logout-btn" id="logoutBtn">Log Out</button>
+    </section>
+
+    <!-- ========== My Trip (opens and closes without JS) ========== -->
+    <details class="my-trips reveal">
+      <summary>My Trip</summary>
+
+      <!-- saved trips are added here by profile.js -->
+      <div id="tripsList"></div>
+    </details>
+
+    <!-- ========== My Favorites ========== -->
+    <details class="my-trips reveal">
+      <summary>My Favorites</summary>
+
+      <!-- favorite places are added here by profile.js -->
+      <div id="favoritesList"></div>
+    </details>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="footer-logo reveal">
+      <img src="images/logo-icon.png" alt="TravIris logo">
+      <span>TravIris</span>
+    </div>
+
+    <hr>
+
+    <div class="social reveal">
+      <span>follow us on</span>
+      <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <script src="profile.js"></script>
+  <!-- type="module" because it uses Firebase (import) -->
+  <script type="module" src="profile-auth.js"></script>
+  <!-- Firestore: trips and favorites -->
+  <script type="module" src="data.js"></script>
+</body>
+</html>

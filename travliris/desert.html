@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravIris | Mountains &amp; Desert</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="category.css">
+</head>
+<body>
+
+  <!-- ========== Header ========== -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="TravIris logo">
+    </a>
+
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="index.html#categories" class="active">Explore</a>
+      <a href="planning.html">Planning</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <a href="profile.html" class="user">
+      <img src="images/avatar.png" alt="User">
+    </a>
+  </header>
+
+  <!-- ========== Category ========== -->
+  <main class="category">
+    <h1 class="category-title">
+      <a href="index.html#categories" class="back"><i class="fa-solid fa-arrow-left"></i></a>
+      Mountains &amp; Desert
+    </h1>
+
+    <!-- ===== Jordan&rsquo;s Hidden Places ===== -->
+    <h2 class="section-title reveal">Jordan&rsquo;s Hidden Places</h2>
+    <div class="row-wrap reveal">
+      <div class="places-row hidden-row">
+
+        <!-- Burdah Rock Bridge -->
+        <div class="place-card">
+          <div class="place-main">
+            <button class="fav-btn" onclick="toggleFavorite(this)">&#9825;</button>
+            <img src="images/burdah.jpeg" alt="Burdah Rock Bridge">
+            <h3>Burdah Rock Bridge</h3>
+            <p>One of the highest natural rock bridges in Wadi Rum, reached by a steep scramble with amazing desert views.</p>
+            <button class="more-btn" onclick="openCard(this)">More Info</button>
+          </div>
+
+          <div class="place-details">
+            <button class="close-btn" onclick="closeCard(this)">&times;</button>
+            <h3>Climb Burdah Arch</h3>
+            <p>Scramble up the red rocks with a Bedouin guide, stand on top of the natural bridge, and look over the endless Wadi Rum desert.</p>
+            <ul>
+              <li><i class="fa-solid fa-location-dot"></i> <b>Location:</b> Eastern side of Wadi Rum Protected Area.</li>
+              <li><i class="fa-solid fa-dollar-sign"></i> <b>Price:</b> Wadi Rum entry 5 JOD + guide and jeep from about 40 JOD.</li>
+              <li><i class="fa-solid fa-person-hiking"></i> <b>Activities:</b> Rock scrambling, hiking, and photography.</li>
+              <li><i class="fa-solid fa-utensils"></i> <b>Services:</b> Bedouin guides, jeep tours, and camps nearby.</li>
+            </ul>
+            <button class="plan-btn" onclick="addToPlan(this)">Add to the plan</button>
+          </div>
+        </div>
+
+        <!-- Jabal Umm ad Dami -->
+        <div class="place-card">
+          <div class="place-main">
+            <button class="fav-btn" onclick="toggleFavorite(this)">&#9825;</button>
+            <img src="images/umm-dami.jpeg" alt="Jabal Umm ad Dami">
+            <h3>Jabal Umm ad Dami</h3>
+            <p>Jordan's highest mountain, a quiet peak near the Saudi border with views all the way to the Red Sea on clear days.</p>
+            <button class="more-btn" onclick="openCard(this)">More Info</button>
+          </div>
+
+          <div class="place-details">
+            <button class="close-btn" onclick="closeCard(this)">&times;</button>
+            <h3>Summit Jordan's Highest Peak</h3>
+            <p>Hike to the top of Jordan's highest mountain, watch the sunset over the desert, and spend the night under the stars.</p>
+            <ul>
+              <li><i class="fa-solid fa-location-dot"></i> <b>Location:</b> Southern Wadi Rum, near the Saudi border.</li>
+              <li><i class="fa-solid fa-dollar-sign"></i> <b>Price:</b> Guided trips from about 50 JOD per person.</li>
+              <li><i class="fa-solid fa-person-hiking"></i> <b>Activities:</b> Mountain hiking, sunset watching, and stargazing.</li>
+              <li><i class="fa-solid fa-utensils"></i> <b>Services:</b> Bedouin guides and desert camps.</li>
+            </ul>
+            <button class="plan-btn" onclick="addToPlan(this)">Add to the plan</button>
+          </div>
+        </div>
+
+      </div>
+      <button class="arrow" onclick="scrollRow(this)"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <!-- ===== Most Famous Spots ===== -->
+    <h2 class="section-title reveal">Most Famous Spots</h2>
+    <div class="row-wrap reveal">
+      <div class="places-row famous-row">
+
+        <!-- Wadi Rum -->
+        <div class="place-card">
+          <div class="place-main">
+            <button class="fav-btn" onclick="toggleFavorite(this)">&#9825;</button>
+            <img src="images/cat-desert.jpg" alt="Wadi Rum">
+            <h3>Wadi Rum</h3>
+            <p>The famous red desert of Jordan, known for its huge mountains, sand dunes, and Bedouin camps.</p>
+            <button class="more-btn" onclick="openCard(this)">More Info</button>
+          </div>
+
+          <div class="place-details">
+            <button class="close-btn" onclick="closeCard(this)">&times;</button>
+            <h3>Jeep Safari &amp; Bedouin Camp</h3>
+            <p>Ride a jeep across the red sand, visit old rock drawings, and spend the night in a Bedouin camp under a sky full of stars.</p>
+            <ul>
+              <li><i class="fa-solid fa-location-dot"></i> <b>Location:</b> Wadi Rum, about 1 hour north of Aqaba.</li>
+              <li><i class="fa-solid fa-dollar-sign"></i> <b>Price:</b> Entry 5 JOD, jeep tours from about 30 JOD.</li>
+              <li><i class="fa-solid fa-person-hiking"></i> <b>Activities:</b> Jeep tours, camel rides, camping, and stargazing.</li>
+              <li><i class="fa-solid fa-utensils"></i> <b>Services:</b> Bedouin camps, bubble tents, and traditional zarb dinner.</li>
+            </ul>
+            <button class="plan-btn" onclick="addToPlan(this)">Add to the plan</button>
+          </div>
+        </div>
+
+        <!-- Mount Nebo -->
+        <div class="place-card">
+          <div class="place-main">
+            <button class="fav-btn" onclick="toggleFavorite(this)">&#9825;</button>
+            <img src="images/nebo.webp" alt="Mount Nebo">
+            <h3>Mount Nebo</h3>
+            <p>A holy mountain with wide views over the Jordan Valley and the Dead Sea.</p>
+            <button class="more-btn" onclick="openCard(this)">More Info</button>
+          </div>
+
+          <div class="place-details">
+            <button class="close-btn" onclick="closeCard(this)">&times;</button>
+            <h3>Panoramic Viewpoint</h3>
+            <p>Stand on top of the mountain, see the Jordan Valley and the Dead Sea below, and visit the old church with its beautiful mosaics.</p>
+            <ul>
+              <li><i class="fa-solid fa-location-dot"></i> <b>Location:</b> Near Madaba, about 45 minutes from Amman.</li>
+              <li><i class="fa-solid fa-dollar-sign"></i> <b>Price:</b> About 3 JOD per person.</li>
+              <li><i class="fa-solid fa-person-hiking"></i> <b>Activities:</b> Sightseeing, mosaics, and sunset views.</li>
+              <li><i class="fa-solid fa-utensils"></i> <b>Services:</b> Visitor center, café, and souvenir shops.</li>
+            </ul>
+            <button class="plan-btn" onclick="addToPlan(this)">Add to the plan</button>
+          </div>
+        </div>
+
+      </div>
+      <button class="arrow" onclick="scrollRow(this)"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="footer-logo reveal">
+      <img src="images/logo-icon.png" alt="TravIris logo">
+      <span>TravIris</span>
+    </div>
+
+    <hr>
+
+    <div class="social reveal">
+      <span>follow us on</span>
+      <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Firebase: to know if the user is logged in -->
+  <script type="module" src="firebase.js"></script>
+  <!-- Firestore: trips and favorites -->
+  <script type="module" src="data.js"></script>
+</body>
+</html>

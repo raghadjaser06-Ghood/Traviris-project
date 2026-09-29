@@ -1,0 +1,635 @@
+/* ========== Hero ========== */
+.about-hero {
+  position: relative;
+  margin-top: 30px;
+}
+
+.about-hero-img {
+  overflow: hidden; /* so the zoom stays inside */
+}
+
+.about-hero-img img {
+  display: block;
+  width: 100%;
+  animation: slowZoom 12s ease-in-out infinite alternate;
+}
+
+.about-hero-text {
+  position: absolute;
+  top: 24%;
+  left: 84px;
+  color: #f1edd9;
+}
+
+.about-hero-text h1 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  animation: fadeUp 0.9s ease-out both;
+}
+
+.about-hero-text p {
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 500;
+  animation: fadeUp 0.9s ease-out 0.4s both;
+}
+
+/* ========== Traditional vs Meaningful ========== */
+.compare {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+  margin-top: -100px; /* the cards go up over the image */
+}
+
+.compare-card {
+  width: 390px;
+  min-height: 250px;
+  background-color: #b4c6aa;
+  border-radius: 22px;
+  padding: 35px 30px;
+  transition: 0.3s;
+}
+
+.compare-card h3 {
+  font-size: 27px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.compare-card p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.card-left {
+  animation: fadeUp 0.8s ease-out 0.6s both;
+}
+
+.card-right {
+  animation: fadeUp 0.8s ease-out 0.9s both;
+}
+
+.compare-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(12, 52, 44, 0.2);
+}
+
+/* the arrow moves left and right all the time */
+.compare-arrow {
+  font-size: 60px;
+  color: #0c342c;
+  animation: moveArrow 1.5s ease-in-out infinite;
+}
+
+/* ========== Why Explore with Us ========== */
+.why {
+  width: 1020px;
+  max-width: 100%;
+  margin: 130px auto 0;
+  padding: 0 40px;
+}
+
+.why h2 {
+  text-align: center;
+  font-size: 60px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.why-item {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 45px;
+  padding: 10px 15px;
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+.why-icon {
+  font-size: 52px;
+  margin-top: 8px;
+  transition: 0.5s;
+}
+
+.why-item h3 {
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.why-item p {
+  font-size: 26px;
+  line-height: 1.6;
+}
+
+/* hover: the item moves a little and gets a light background */
+.why-item:hover {
+  background-color: rgba(180, 198, 170, 0.35);
+  transform: translateX(12px);
+}
+
+.why-item:hover .why-icon {
+  transform: scale(1.15);
+}
+
+/* the compass spins on hover */
+.why-item:hover .spin {
+  transform: rotate(360deg) scale(1.15);
+}
+
+/* ========== Team box ========== */
+.team-box {
+  width: 1200px;
+  max-width: calc(100% - 80px);
+  margin: 130px auto 0;
+  background-color: #0c342c;
+  border-radius: 16px;
+  padding-bottom: 70px;
+}
+
+.team-quote {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  top: -95px;
+  margin-bottom: -95px; /* keep the space under it right */
+  background-color: #b4c6aa;
+  border-radius: 16px;
+  padding: 25px;
+  text-align: center;
+}
+
+.team-quote p {
+  font-size: 33px;
+  line-height: 1.6;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-top: 30px;
+  color: #f1edd9;
+  text-align: center;
+}
+
+.stat {
+  width: 40%;
+  transition: 0.3s;
+}
+
+.stat h3 {
+  font-size: 44px;
+  font-weight: 700;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+.stat p {
+  font-size: 33px;
+  font-weight: 300;
+}
+
+.stat:hover {
+  transform: scale(1.08);
+}
+
+.stat-line {
+  width: 3px;
+  min-height: 220px;
+  background-color: #f1edd9;
+}
+
+/* ========== Meet The Explorers ========== */
+.explorers {
+  text-align: center;
+  padding: 140px 40px 150px;
+}
+
+.explorers h2 {
+  font-size: 60px;
+  font-weight: 600;
+}
+
+.explorers-sub {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 60px;
+}
+
+.members {
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+  flex-wrap: wrap;
+}
+
+.member {
+  cursor: pointer;
+}
+
+.member-photo {
+  width: 205px;
+  height: 205px;
+  margin: 0 auto 20px;
+  border: 3px solid #0c342c;
+  border-radius: 50%;
+  background-color: #b4c6aa;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.member-photo svg {
+  width: 100%;
+  height: 100%;
+  fill: #0c342c;
+  transition: 0.4s;
+}
+
+.member h4 {
+  display: inline-block;
+  font-size: 33px;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+/* a line grows under the name */
+.member h4::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  margin: 4px auto 0;
+  background-color: #0c342c;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* ===== hover on a member ===== */
+.member:hover .member-photo {
+  background-color: #0c342c;
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 15px 25px rgba(12, 52, 44, 0.3);
+}
+
+.member:hover .member-photo svg {
+  fill: #b4c6aa;
+  transform: translateY(6px);
+}
+
+.member:hover h4 {
+  font-weight: 600;
+  transform: translateY(-6px);
+}
+
+.member:hover h4::after {
+  width: 100%;
+}
+
+/* ========== Keyframes ========== */
+@keyframes fadeUp {
+  from { opacity: 0; filter: blur(10px); transform: translateY(40px); }
+  to   { opacity: 1; filter: blur(0); transform: translateY(0); }
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+@keyframes moveArrow {
+  0%, 100% { transform: translateX(-8px); }
+  50%      { transform: translateX(8px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.12); }
+}
+
+/* ========== Show sections while scrolling (CSS only) ==========
+   works in new browsers (Chrome, Edge). In other browsers the
+   sections just show normally without the effect. */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: fadeUp linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
+}
+
+/* ========== Tablet ========== */
+@media (max-width: 1200px) {
+  .about-hero-text {
+    left: 40px;
+  }
+
+  .about-hero-text h1 {
+    font-size: 30px;
+  }
+
+  .about-hero-text p {
+    font-size: 15px;
+  }
+
+  .compare {
+    margin-top: 40px;
+    padding: 0 40px;
+  }
+
+  .why h2,
+  .explorers h2 {
+    font-size: 46px;
+  }
+
+  .why-item h3 {
+    font-size: 32px;
+  }
+
+  .why-item p {
+    font-size: 20px;
+  }
+
+  .team-quote p,
+  .stat p {
+    font-size: 24px;
+  }
+
+  .members {
+    gap: 50px;
+  }
+}
+
+/* ========== Mobile ========== */
+@media (max-width: 700px) {
+  .about-hero-img img {
+    height: 300px;
+    object-fit: cover;
+    object-position: 70% center;
+  }
+
+  .about-hero-text {
+    left: 16px;
+    right: 16px;
+    top: 18%;
+  }
+
+  .about-hero-text h1 {
+    font-size: 22px;
+  }
+
+  .about-hero-text br {
+    display: none;
+  }
+
+  .about-hero-text p {
+    font-size: 13px;
+  }
+
+  .compare {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 16px;
+  }
+
+  .compare-card {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .compare-arrow {
+    transform: rotate(90deg);
+    font-size: 40px;
+    animation: none;
+  }
+
+  .why {
+    margin-top: 80px;
+    padding: 0 16px;
+  }
+
+  .why h2,
+  .explorers h2 {
+    font-size: 32px;
+  }
+
+  .why-icon {
+    font-size: 32px;
+  }
+
+  .why-item h3 {
+    font-size: 24px;
+  }
+
+  .why-item p {
+    font-size: 16px;
+  }
+
+  .team-box {
+    max-width: calc(100% - 32px);
+    margin-top: 110px;
+    padding-bottom: 40px;
+  }
+
+  .team-quote {
+    top: -60px;
+    margin-bottom: -60px;
+    padding: 15px;
+  }
+
+  .team-quote p {
+    font-size: 18px;
+  }
+
+  .team-quote br {
+    display: none;
+  }
+
+  .stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .stat {
+    width: 100%;
+  }
+
+  .stat h3 {
+    font-size: 34px;
+  }
+
+  .stat p {
+    font-size: 20px;
+  }
+
+  .stat-line {
+    width: 60%;
+    min-height: 3px;
+    height: 3px;
+  }
+
+  .explorers {
+    padding: 90px 16px 100px;
+  }
+
+  .explorers-sub {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  .members {
+    gap: 30px;
+  }
+
+  .member-photo {
+    width: 130px;
+    height: 130px;
+  }
+
+  .member h4 {
+    font-size: 20px;
+  }
+}
+
+/* ========== Feedback ========== */
+.feedback {
+  width: 900px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 130px 40px 0;
+  text-align: center;
+}
+
+.feedback h2 {
+  font-size: 60px;
+  font-weight: 600;
+}
+
+.feedback-sub {
+  font-size: 24px;
+  margin-bottom: 35px;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #b4c6aa;
+  border-radius: 20px;
+  padding: 35px;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+  width: 100%;
+  background-color: #0c342c;
+  color: #f1edd9;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+}
+
+.feedback-form input::placeholder,
+.feedback-form textarea::placeholder {
+  color: rgba(241, 237, 217, 0.6);
+}
+
+.feedback-form textarea {
+  resize: vertical;
+}
+
+.feedback-form button {
+  align-self: center;
+  width: 220px;
+  padding: 12px;
+  background-color: #f1edd9;
+  color: #0c342c;
+  border: 2px solid #0c342c;
+  border-radius: 14px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.feedback-form button:hover {
+  background-color: #0c342c;
+  color: #f1edd9;
+}
+
+.feedback-title {
+  font-size: 34px;
+  font-weight: 600;
+  margin: 60px 0 20px;
+}
+
+.feedback-title span {
+  font-size: 22px;
+  color: #b8860b;
+}
+
+.feedback-card {
+  text-align: left;
+  border: 3px solid #b4c6aa;
+  border-radius: 16px;
+  padding: 18px 24px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.feedback-card:hover {
+  border-color: #0c342c;
+}
+
+.fb-stars {
+  color: #b8860b;
+  font-size: 22px;
+}
+
+.fb-message {
+  font-size: 19px;
+  margin: 5px 0;
+}
+
+.fb-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.no-feedback {
+  font-size: 18px;
+}
+
+@media (max-width: 700px) {
+  .feedback {
+    padding: 90px 16px 0;
+  }
+
+  .feedback h2 {
+    font-size: 32px;
+  }
+
+  .feedback-sub {
+    font-size: 17px;
+  }
+
+  .feedback-form {
+    padding: 20px;
+  }
+
+  .feedback-title {
+    font-size: 24px;
+  }
+}

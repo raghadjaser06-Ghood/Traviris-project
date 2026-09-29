@@ -1,0 +1,447 @@
+/* ========== Profile page ========== */
+.profile-page {
+  padding: 110px 120px 150px;
+}
+
+/* the avatar in the header gets a small ring on this page */
+.user-active img {
+  border-bottom: 3px solid #b4c6aa;
+  padding-bottom: 4px;
+}
+
+.user img {
+  transition: 0.3s;
+}
+
+.user:hover img {
+  transform: scale(1.1);
+}
+
+/* ========== Card ========== */
+.profile-card {
+  width: 996px;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #b4c6aa;
+  border-radius: 20px;
+  padding: 55px 53px 60px;
+  animation: cardUp 0.7s ease-out both;
+}
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.profile-pic {
+  width: 78px;
+  height: 78px;
+  border: 3px solid #0c342c;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.profile-pic svg {
+  width: 100%;
+  height: 100%;
+  fill: #0c342c;
+}
+
+.profile-pic img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-top h1 {
+  font-size: 38px;
+  font-weight: 600;
+  flex: 1;
+}
+
+.pic-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* hide the real file input, the label is the button */
+#picInput {
+  display: none;
+}
+
+.small-btn {
+  width: 168px;
+  padding: 4px;
+  border: 2px solid #0c342c;
+  border-radius: 16px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.small-btn.dark {
+  background-color: #0c342c;
+  color: #f1edd9;
+}
+
+.small-btn.light {
+  background-color: transparent;
+  color: #0c342c;
+}
+
+.small-btn.dark:hover {
+  background-color: #1c5a4c;
+}
+
+.small-btn.light:hover {
+  background-color: #0c342c;
+  color: #f1edd9;
+}
+
+/* ========== Inputs ========== */
+.fields {
+  display: grid;
+  grid-template-columns: 285px 285px;
+  column-gap: 74px;
+  row-gap: 35px;
+  margin: 25px 0 0 123px;
+}
+
+.field label {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.field input {
+  width: 100%;
+  height: 50px;
+  background-color: #0c342c;
+  color: #f1edd9;
+  border: 2px solid #0c342c;
+  border-radius: 14px;
+  padding: 0 16px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* first and last name can't be changed here */
+.field input[readonly] {
+  opacity: 0.85;
+  cursor: default;
+}
+
+.field input[readonly]:focus {
+  border-color: #0c342c;
+  box-shadow: none;
+}
+
+.field input::placeholder {
+  color: rgba(241, 237, 217, 0.5);
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #f1edd9;
+  box-shadow: 0 0 0 3px #0c342c;
+}
+
+/* ========== Stats ========== */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  margin-top: 80px;
+}
+
+.stats p {
+  font-size: 26px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.stats i {
+  font-size: 30px;
+  margin-right: 6px;
+}
+
+.stats b {
+  margin-left: 40px;
+}
+
+.stats p:hover {
+  transform: scale(1.08);
+}
+
+/* ========== My Trip ========== */
+.my-trips {
+  width: 996px;
+  max-width: 100%;
+  margin: 110px auto 0;
+}
+
+.my-trips summary {
+  list-style: none; /* remove the default triangle */
+  font-size: 38px;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.my-trips summary::-webkit-details-marker {
+  display: none;
+}
+
+/* our own triangle, it turns down when open */
+.my-trips summary::before {
+  content: "";
+  display: inline-block;
+  border-left: 16px solid #0c342c;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  margin-right: 20px;
+  transition: 0.3s;
+}
+
+.my-trips[open] summary::before {
+  transform: rotate(90deg);
+}
+
+#tripsList {
+  margin-top: 25px;
+}
+
+.my-trips[open] #tripsList {
+  animation: cardUp 0.4s ease-out;
+}
+
+.trip-card {
+  border: 3px solid #0c342c;
+  border-radius: 14px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.trip-card:hover {
+  background-color: rgba(180, 198, 170, 0.3);
+}
+
+.trip-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trip-head h3 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.trip-head span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.delete-trip {
+  background: none;
+  border: 2px solid #0c342c;
+  border-radius: 14px;
+  padding: 4px 18px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0c342c;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-trip:hover {
+  background-color: #0c342c;
+  color: #f1edd9;
+}
+
+.trip-info {
+  font-size: 16px;
+  margin: 6px 0 12px;
+  opacity: 0.8;
+}
+
+.trip-card ul {
+  padding-left: 22px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.no-trips {
+  font-size: 20px;
+}
+
+.no-trips a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@keyframes cardUp {
+  from { opacity: 0; filter: blur(10px); transform: translateY(30px); }
+  to   { opacity: 1; filter: blur(0); transform: translateY(0); }
+}
+
+/* ========== Tablet ========== */
+@media (max-width: 1200px) {
+  .profile-page {
+    padding: 70px 40px 120px;
+  }
+
+  .fields {
+    margin-left: 0;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+  }
+
+  .stats {
+    gap: 60px;
+  }
+}
+
+/* ========== Mobile ========== */
+@media (max-width: 700px) {
+  .profile-page {
+    padding: 40px 16px 90px;
+  }
+
+  .profile-card {
+    padding: 30px 20px 35px;
+  }
+
+  .profile-top {
+    flex-wrap: wrap;
+  }
+
+  .profile-top h1 {
+    font-size: 26px;
+  }
+
+  .pic-buttons {
+    width: 100%;
+  }
+
+  .small-btn {
+    flex: 1;
+    width: auto;
+  }
+
+  .fields {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  .field label {
+    font-size: 18px;
+  }
+
+  .field input {
+    font-size: 16px;
+  }
+
+  .stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+  }
+
+  .stats p {
+    font-size: 20px;
+  }
+
+  .stats b {
+    margin-left: 15px;
+  }
+
+  .my-trips {
+    margin-top: 60px;
+  }
+
+  .my-trips summary {
+    font-size: 28px;
+  }
+
+  .trip-card {
+    padding: 18px;
+  }
+
+  .trip-head h3 {
+    font-size: 22px;
+  }
+}
+
+/* ========== My Favorites ========== */
+.my-trips + .my-trips {
+  margin-top: 50px;
+}
+
+.fav-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #b4c6aa;
+  padding: 14px 5px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.fav-item span {
+  color: #0c342c;
+}
+
+/* ========== Log out ========== */
+.logout-btn {
+  display: block;
+  margin: 45px auto 0;
+  width: 200px;
+  padding: 10px;
+  background: none;
+  border: 2px solid #0c342c;
+  border-radius: 14px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0c342c;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #0c342c;
+  color: #f1edd9;
+}
+
+/* ========== Change password button ========== */
+.reset-btn {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  color: #0c342c;
+  border: 2px solid #0c342c;
+  border-radius: 14px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reset-btn:hover {
+  background-color: #0c342c;
+  color: #f1edd9;
+}

@@ -1,0 +1,443 @@
+/* ========== Colors ==========
+   cream:       #f1edd9
+   dark green:  #0c342c
+   light green: #b4c6aa
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f1edd9;
+  color: #0c342c;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ========== Header ========== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 120px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.logo img {
+  width: 85px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #b4c6aa;
+  border-radius: 20px;
+  width: 795px;
+  padding: 0 50px;
+}
+
+.navbar a {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 7px 20px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background-color: #f1edd9;
+}
+
+.user img {
+  width: 55px;
+}
+
+/* ========== Hero ========== */
+.hero {
+  position: relative;
+  height: 950px;
+  overflow: hidden;
+}
+
+.hero-title {
+  font-size: 250px;
+  font-weight: 700;
+  letter-spacing: 25px;
+  line-height: 1;
+  padding-left: 50px;
+  margin-top: 50px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 60px;
+  padding-left: 122px;
+  position: relative;
+  z-index: 5;
+}
+
+.btn {
+  font-size: 22px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 2px solid #b4c6aa;
+  transition: 0.3s;
+}
+
+.btn-fill {
+  background-color: #b4c6aa;
+}
+
+.btn-outline:hover {
+  background-color: #b4c6aa;
+}
+
+.btn-fill:hover {
+  background-color: #0c342c;
+  border-color: #0c342c;
+  color: #f1edd9;
+}
+
+/* the rock sits on top of the title */
+.hero-rock {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 107%;
+  max-width: none;
+  z-index: 2;
+}
+
+/* ========== Categories ========== */
+.categories {
+  text-align: center;
+  padding: 250px 120px 280px;
+}
+
+.categories h2 {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.categories p {
+  font-size: 30px;
+  margin-bottom: 80px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card {
+  width: 285px;
+  background-color: #b4c6aa;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+}
+
+.card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 25px 10px;
+}
+
+/* 1st and 3rd card are lower */
+.card-low {
+  margin-top: 84px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover h3 {
+  background-color: #0c342c;
+  color: #f1edd9;
+}
+
+/* ========== Footer ========== */
+.footer {
+  background-color: #0c342c;
+  color: #f1edd9;
+  padding: 55px 120px 55px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.footer-logo img {
+  width: 88px;
+}
+
+.footer-logo span {
+  font-size: 90px;
+  line-height: 1;
+}
+
+.footer hr {
+  border: none;
+  height: 3px;
+  background-color: #f1edd9;
+  margin: 25px 0 45px;
+}
+
+.social {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 25px;
+}
+
+.social span {
+  font-size: 22px;
+}
+
+.social i {
+  font-size: 40px;
+}
+
+.twitter { color: #1d9bf0; }
+.facebook { color: #3b5998; }
+.instagram { color: #e1306c; }
+
+.social a:hover {
+  opacity: 0.7;
+}
+
+/* ========== Tablet ========== */
+@media (max-width: 1200px) {
+  .header,
+  .categories,
+  .footer {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .navbar {
+    width: auto;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .hero {
+    height: 750px;
+  }
+
+  .hero-title {
+    font-size: 170px;
+    letter-spacing: 15px;
+  }
+
+  .hero-buttons {
+    padding-left: 60px;
+  }
+
+  .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .card-low {
+    margin-top: 0;
+  }
+}
+
+/* ========== Mobile ========== */
+@media (max-width: 700px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 20px 16px 0;
+  }
+
+  .logo img {
+    width: 60px;
+  }
+
+  .user img {
+    width: 40px;
+  }
+
+  .navbar {
+    order: 3;
+    width: 100%;
+    margin-top: 15px;
+    padding: 0;
+    gap: 0;
+  }
+
+  .navbar a {
+    font-size: 15px;
+    padding: 6px 12px;
+  }
+
+  .hero {
+    height: 480px;
+  }
+
+  .hero-title {
+    font-size: 70px;
+    letter-spacing: 4px;
+    padding-left: 16px;
+    margin-top: 40px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 16px;
+    margin-top: 25px;
+  }
+
+  .btn {
+    font-size: 17px;
+  }
+
+  .categories {
+    padding: 100px 16px 120px;
+  }
+
+  .categories h2 {
+    font-size: 32px;
+  }
+
+  .categories p {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  .footer {
+    padding: 40px 16px;
+  }
+
+  .footer-logo img {
+    width: 55px;
+  }
+
+  .footer-logo span {
+    font-size: 50px;
+  }
+
+  .social span {
+    font-size: 18px;
+  }
+
+  .social i {
+    font-size: 30px;
+  }
+}
+
+/* ========== JORDAN animation ========== */
+.hero-title span {
+  display: inline-block;
+  opacity: 0;
+  animation: showLetter 0.6s forwards;
+}
+
+.hero-title span:nth-child(1) { animation-delay: 0.1s; }
+.hero-title span:nth-child(2) { animation-delay: 0.3s; }
+.hero-title span:nth-child(3) { animation-delay: 0.5s; }
+.hero-title span:nth-child(4) { animation-delay: 0.7s; }
+.hero-title span:nth-child(5) { animation-delay: 0.9s; }
+.hero-title span:nth-child(6) { animation-delay: 1.1s; }
+
+@keyframes showLetter {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+/* ========== Buttons hover ========== */
+.btn {
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== Smooth scroll to categories ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========== Fade up while scrolling (used in all pages) ==========
+   works in new browsers (Chrome, Edge). In other browsers the
+   sections just show normally without the effect. */
+@keyframes revealUp {
+  from { opacity: 0; filter: blur(10px); transform: translateY(50px); }
+  to   { opacity: 1; filter: blur(0); transform: translateY(0); }
+}
+
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: revealUp linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
+}
+
+/* ========== Home: more animation ========== */
+
+/* the rock comes up from the bottom */
+.hero-rock {
+  animation: rockUp 1.4s ease-out both;
+}
+
+@keyframes rockUp {
+  from { opacity: 0; filter: blur(10px); transform: translateY(120px); }
+  to   { opacity: 1; filter: blur(0); transform: translateY(0); }
+}
+
+/* the buttons show after the letters of JORDAN */
+.hero-buttons {
+  animation: revealUp 0.8s ease-out 1.3s both;
+}
+
+/* the photo in the category card zooms a little */
+.card img {
+  transition: 0.5s;
+}
+
+.card h3 {
+  position: relative; /* stays on top of the zoomed photo */
+}
+
+.card:hover img {
+  transform: scale(1.08);
+}

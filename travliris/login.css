@@ -1,0 +1,150 @@
+/* ========== Login page ========== */
+.login-page {
+  display: flex;
+  justify-content: center;
+  padding: 80px 16px 120px;
+}
+
+.login-box {
+  width: 520px;
+  max-width: 100%;
+  background-color: #b4c6aa;
+  border-radius: 20px;
+  padding: 40px 45px;
+  text-align: center;
+  animation: boxUp 0.6s ease-out;
+}
+
+.login-logo {
+  width: 80px;
+}
+
+.login-box h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.login-sub {
+  font-size: 17px;
+  margin-bottom: 25px;
+}
+
+.login-box label {
+  display: block;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 15px 0 6px;
+}
+
+.login-box input {
+  width: 100%;
+  height: 50px;
+  background-color: #0c342c;
+  color: #f1edd9;
+  border: 2px solid #0c342c;
+  border-radius: 14px;
+  padding: 0 16px;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+}
+
+.login-box input::placeholder {
+  color: rgba(241, 237, 217, 0.5);
+}
+
+.login-box input:focus {
+  outline: none;
+  border-color: #f1edd9;
+}
+
+/* first name + last name next to each other */
+.two-inputs {
+  display: flex;
+  gap: 15px;
+}
+
+.two-inputs div {
+  flex: 1;
+}
+
+.login-btn {
+  width: 100%;
+  margin-top: 30px;
+  padding: 13px;
+  background-color: #0c342c;
+  color: #f1edd9;
+  border: 2px solid #0c342c;
+  border-radius: 14px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #f1edd9;
+  color: #0c342c;
+}
+
+.switch {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.switch a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@keyframes boxUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== Mobile ========== */
+@media (max-width: 700px) {
+  .login-box {
+    padding: 30px 20px;
+  }
+
+  .login-box h1 {
+    font-size: 28px;
+  }
+
+  .two-inputs {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+/* ========== Status message & extra links ========== */
+.status {
+  min-height: 24px;
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.status.error {
+  color: #a4161a;
+}
+
+.status.success {
+  color: #0c342c;
+}
+
+.forgot {
+  display: block;
+  text-align: right;
+  margin-top: 8px;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+/* the button while waiting for Firebase */
+.login-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}

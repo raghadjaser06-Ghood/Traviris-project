@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravIris | History &amp; Heritage</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="category.css">
+</head>
+<body>
+
+  <!-- ========== Header ========== -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="TravIris logo">
+    </a>
+
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="index.html#categories" class="active">Explore</a>
+      <a href="planning.html">Planning</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <a href="profile.html" class="user">
+      <img src="images/avatar.png" alt="User">
+    </a>
+  </header>
+
+  <!-- ========== Category ========== -->
+  <main class="category">
+    <h1 class="category-title">
+      <a href="index.html#categories" class="back"><i class="fa-solid fa-arrow-left"></i></a>
+      History &amp; Heritage
+    </h1>
+
+    <!-- ===== Jordan&rsquo;s Hidden Places ===== -->
+    <h2 class="section-title reveal">Jordan&rsquo;s Hidden Places</h2>
+    <div class="row-wrap reveal">
+      <div class="places-row hidden-row">
+
+        <!-- pella(Tabaqat Fahel) -->
+        <div class="place-card">
+          <div class="place-main">
+            <button class="fav-btn" onclick="toggleFavorite(this)">&#9825;</button>
+            <img src="images/fahel.webp" alt="Tabakqat-fahel">
+            <h3>Pella (Tabaqat Fahl)</h3>
+            <p>A quiet ancient city in the green Jordan Valley, with ruins from thousands of years of history.</p>
+            <button class="more-btn" onclick="openCard(this)">More Info</button>
+          </div>
+
+          <div class="place-details">
+            <button class="close-btn" onclick="closeCard(this)">&times;</button>
+            <h3>Ancient City in the Valley</h3>
+            <p>Walk between Roman columns, old Byzantine churches, and a small Roman theater, then enjoy a view over the Jordan Valley from the hill.</p>
+            <ul>
+              <li><i class="fa-solid fa-location-dot"></i> <b>Location:</b> Northern Jordan Valley, near Irbid.</li>
+              <li><i class="fa-solid fa-dollar-sign"></i> <b>Price:</b> Free or a small entry fee (check before you go).</li>
+              <li><i class="fa-solid fa-person-hiking"></i> <b>Activities:</b> Exploring ruins, hiking, and photography.</li>
+              <li><i class="fa-solid fa-utensils"></i> <b>Services:</b> Local guides and a rest house with valley views.</li>
+            </ul>
+            <button class="plan-btn" onclick="addToPlan(this)">Add to the plan</button>
+          </div>
+        </div>
+
+        <!-- Qasr al-Abd -->
+        <div class="place-card">
+          <div class="place-main">
+            <button class="fav-btn" onclick="toggleFavorite(this)">&#9825;</button>
+            <img src="images/qasr-abd.jpeg" alt="Qasr al-Abd">
+            <h3>Qasr al-Abd</h3>
+            <p>A beautiful old palace in a green valley west of Amman, with lion carvings on its walls.</p>
+            <button class="more-btn" onclick="openCard(this)">More Info</button>
+          </div>
+
+          <div class="place-details">
+            <button class="close-btn" onclick="closeCard(this)">&times;</button>
+            <h3>Ancient Palace &amp; Caves</h3>
+            <p>Visit the old palace with its animal carvings, explore the caves nearby, and shop at the local women's handicraft center.</p>
+            <ul>
+              <li><i class="fa-solid fa-location-dot"></i> <b>Location:</b> Iraq al-Amir, Wadi Al Seer, 30 minutes from Amman.</li>
+              <li><i class="fa-solid fa-dollar-sign"></i> <b>Price:</b> About 3 JOD per person.</li>
+              <li><i class="fa-solid fa-person-hiking"></i> <b>Activities:</b> Exploring the palace and caves, handicraft shopping.</li>
+              <li><i class="fa-solid fa-utensils"></i> <b>Services:</b> Women's handicraft cooperative and café.</li>
+            </ul>
+            <button class="plan-btn" onclick="addToPlan(this)">Add to the plan</button>
+          </div>
+        </div>
+
+      </div>
+      <button class="arrow" onclick="scrollRow(this)"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <!-- ===== Most Famous Spots ===== -->
+    <h2 class="section-title reveal">Most Famous Spots</h2>
+    <div class="row-wrap reveal">
+      <div class="places-row famous-row">
+
+        <!-- Petra -->
+        <div class="place-card">
+          <div class="place-main">
+            <button class="fav-btn" onclick="toggleFavorite(this)">&#9825;</button>
+            <img src="images/cat-history.jpg" alt="Petra">
+            <h3>Petra</h3>
+            <p>The Rose City, carved into pink rock, and one of the New Seven Wonders of the World.</p>
+            <button class="more-btn" onclick="openCard(this)">More Info</button>
+          </div>
+
+          <div class="place-details">
+            <button class="close-btn" onclick="closeCard(this)">&times;</button>
+            <h3>Walk the Siq to the Treasury</h3>
+            <p>Walk through the narrow Siq to the Treasury, climb up to the Monastery, and come back at night for Petra by Night.</p>
+            <ul>
+              <li><i class="fa-solid fa-location-dot"></i> <b>Location:</b> Wadi Musa, about 3 hours south of Amman.</li>
+              <li><i class="fa-solid fa-dollar-sign"></i> <b>Price:</b> 50 JOD for one day, free with the Jordan Pass.</li>
+              <li><i class="fa-solid fa-person-hiking"></i> <b>Activities:</b> Hiking, sightseeing, and Petra by Night.</li>
+              <li><i class="fa-solid fa-utensils"></i> <b>Services:</b> Guides, horses and carriages, and restaurants.</li>
+            </ul>
+            <button class="plan-btn" onclick="addToPlan(this)">Add to the plan</button>
+          </div>
+        </div>
+
+        <!-- Jerash -->
+        <div class="place-card">
+          <div class="place-main">
+            <button class="fav-btn" onclick="toggleFavorite(this)">&#9825;</button>
+            <img src="images/jerash.jpeg" alt="Jerash">
+            <h3>Jerash</h3>
+            <p>One of the best-kept Roman cities in the world, with long columned streets and theaters.</p>
+            <button class="more-btn" onclick="openCard(this)">More Info</button>
+          </div>
+
+          <div class="place-details">
+            <button class="close-btn" onclick="closeCard(this)">&times;</button>
+            <h3>Roman City Tour</h3>
+            <p>Walk the long columned street, stand in the Oval Plaza, and watch the Roman army and chariot show.</p>
+            <ul>
+              <li><i class="fa-solid fa-location-dot"></i> <b>Location:</b> Jerash, about 50 minutes north of Amman.</li>
+              <li><i class="fa-solid fa-dollar-sign"></i> <b>Price:</b> About 10 JOD, free with the Jordan Pass.</li>
+              <li><i class="fa-solid fa-person-hiking"></i> <b>Activities:</b> Sightseeing, history tours, and chariot show.</li>
+              <li><i class="fa-solid fa-utensils"></i> <b>Services:</b> Visitor center, guides, and restaurants.</li>
+            </ul>
+            <button class="plan-btn" onclick="addToPlan(this)">Add to the plan</button>
+          </div>
+        </div>
+
+      </div>
+      <button class="arrow" onclick="scrollRow(this)"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="footer-logo reveal">
+      <img src="images/logo-icon.png" alt="TravIris logo">
+      <span>TravIris</span>
+    </div>
+
+    <hr>
+
+    <div class="social reveal">
+      <span>follow us on</span>
+      <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Firebase: to know if the user is logged in -->
+  <script type="module" src="firebase.js"></script>
+  <!-- Firestore: trips and favorites -->
+  <script type="module" src="data.js"></script>
+</body>
+</html>

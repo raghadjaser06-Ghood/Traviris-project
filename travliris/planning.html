@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravIris | Planning</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="planning.css">
+</head>
+<body>
+
+  <!-- ========== Header ========== -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="TravIris logo">
+    </a>
+
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="index.html#categories">Explore</a>
+      <a href="planning.html" class="active">Planning</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <a href="profile.html" class="user">
+      <img src="images/avatar.png" alt="User">
+    </a>
+  </header>
+
+  <!-- ========== Hero with map animation ========== -->
+  <section class="plan-hero">
+    <!-- the image and the map move together (slow zoom) -->
+    <div class="plan-hero-media">
+    <img src="images/plan-hero.png" alt="Map of Jordan and the flag" class="plan-hero-img">
+
+    <!-- the svg has the same size as the image (1440 x 652) -->
+    <svg class="map-route" viewBox="0 0 1440 652">
+      <!-- lines between the stars -->
+      <path class="route-line line-1" d="M266 486 L303 363" pathLength="1" />
+      <path class="route-line line-2" d="M303 363 L322 236" pathLength="1" />
+      <path class="route-line line-3" d="M322 236 L467 204" pathLength="1" />
+
+      <!-- the seven-pointed stars -->
+      <g transform="translate(266 486)">
+        <polygon class="star star-1" points="0,-16 3,-6.3 12.5,-10 6.8,-1.6 15.6,3.6 5.5,4.4 6.9,14.4 0,7 -6.9,14.4 -5.5,4.4 -15.6,3.6 -6.8,-1.6 -12.5,-10 -3,-6.3" />
+      </g>
+      <g transform="translate(303 363)">
+        <polygon class="star star-2" points="0,-16 3,-6.3 12.5,-10 6.8,-1.6 15.6,3.6 5.5,4.4 6.9,14.4 0,7 -6.9,14.4 -5.5,4.4 -15.6,3.6 -6.8,-1.6 -12.5,-10 -3,-6.3" />
+      </g>
+      <g transform="translate(322 236)">
+        <polygon class="star star-3" points="0,-16 3,-6.3 12.5,-10 6.8,-1.6 15.6,3.6 5.5,4.4 6.9,14.4 0,7 -6.9,14.4 -5.5,4.4 -15.6,3.6 -6.8,-1.6 -12.5,-10 -3,-6.3" />
+      </g>
+      <g transform="translate(467 204)">
+        <polygon class="star star-4" points="0,-16 3,-6.3 12.5,-10 6.8,-1.6 15.6,3.6 5.5,4.4 6.9,14.4 0,7 -6.9,14.4 -5.5,4.4 -15.6,3.6 -6.8,-1.6 -12.5,-10 -3,-6.3" />
+      </g>
+    </svg>
+    </div>
+
+    <div class="plan-hero-text">
+      <p>PLAN YOUR JORDAN TRIP</p>
+      <h1>Build Your Route</h1>
+    </div>
+  </section>
+
+  <main class="planning">
+
+    <!-- ========== Trip Details ========== -->
+    <fieldset class="trip-details reveal">
+      <legend>Trip Details</legend>
+
+      <h4>When are you travelling?</h4>
+      <div class="pills">
+        <input type="text" class="pill" id="startDate" placeholder="Start Date" onfocus="this.type='date'" onchange="setEndDateMin()">
+        <input type="text" class="pill" id="endDate" placeholder="End Date" onfocus="this.type='date'">
+      </div>
+
+      <h4>Who's travelling?</h4>
+      <div class="pills">
+        <div class="pill counter">
+          <span>Adults</span>
+          <button onclick="changeCount('adults', -1)">&minus;</button>
+          <b id="adults">1</b>
+          <button onclick="changeCount('adults', 1)">+</button>
+        </div>
+
+        <div class="pill counter">
+          <span>Children</span>
+          <button onclick="changeCount('children', -1)">&minus;</button>
+          <b id="children">0</b>
+          <button onclick="changeCount('children', 1)">+</button>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- ========== Days Timeline ========== -->
+    <h2 class="plan-title reveal">Days Timeline</h2>
+    <p class="hint reveal">Drag the tickets to change the order of your days.</p>
+
+    <!-- tickets are added here by planning.js -->
+    <div class="tickets" id="tickets"></div>
+
+    <p class="empty-msg" id="emptyMsg">
+      Your plan is empty. Add places from <a href="index.html#categories">Explore</a> or click "Add Trip".
+    </p>
+
+    <button class="add-trip-btn reveal" onclick="openAddTrip()">
+      Add Trip <span>+</span>
+    </button>
+
+    <div class="center">
+      <button class="dark-btn" onclick="openConfirm()">Confirm</button>
+    </div>
+
+    <!-- ========== Suggested Plan (hidden until "Create Trip") ========== -->
+    <section class="suggested" id="suggested">
+      <fieldset class="suggested-box reveal">
+        <legend>Suggested Plan</legend>
+
+        <div class="suggested-content">
+          <!-- days list is added here by planning.js -->
+          <div class="days-list" id="daysList"></div>
+
+          <!-- route illustration -->
+          <svg class="route-icon" viewBox="80 50 420 430">
+            <!-- the road -->
+            <path d="M268 132 L362 132 A64 64 0 0 1 362 260 L200 260 A73 73 0 0 0 127 333 L127 360 A72 72 0 0 0 199 432 L395 432"
+                  fill="none" stroke="#b4c6aa" stroke-width="44" />
+
+            <!-- big pin (the cream outline makes the small gap) -->
+            <path d="M176 262 L101 188 A88 88 0 1 1 251 188 Z" fill="#b4c6aa" stroke="#f1edd9" stroke-width="8" />
+            <circle cx="176" cy="140" r="30" fill="#f1edd9" />
+
+            <!-- small pin -->
+            <path d="M428 472 L375 399 A62 62 0 1 1 481 399 Z" fill="#b4c6aa" stroke="#f1edd9" stroke-width="8" />
+            <circle cx="428" cy="367" r="21" fill="#f1edd9" />
+          </svg>
+        </div>
+
+        <div class="total">
+          <h3>Estimated Total</h3>
+          <p id="totalPrice">0 JOD / person</p>
+        </div>
+        <p class="total-group" id="totalGroup"></p>
+        <p class="note">Prices may vary depending on season, provider, and availability.</p>
+      </fieldset>
+
+      <div class="center plan-actions">
+        <button class="dark-btn" onclick="savePlan()">Save</button>
+        <button class="light-btn" onclick="window.print()">Save as PDF</button>
+        <button class="light-btn" onclick="openOffices()">Contact a Travel Office</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="footer-logo reveal">
+      <img src="images/logo-icon.png" alt="TravIris logo">
+      <span>TravIris</span>
+    </div>
+
+    <hr>
+
+    <div class="social reveal">
+      <span>follow us on</span>
+      <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <!-- ========== Popup: Add Trip ========== -->
+  <div class="popup-bg" id="addTripPopup">
+    <div class="popup">
+      <button class="popup-close" onclick="closePopup('addTripPopup')">&times;</button>
+      <h2>Add Trip</h2>
+
+      <label>Choose Category</label>
+      <div class="select-box">
+        <select id="categorySelect" onchange="fillDestinations()">
+          <option>Seas &amp; Valleys</option>
+          <option>Mountains &amp; Desert</option>
+          <option>Forests &amp; Nature</option>
+          <option>History &amp; Heritage</option>
+        </select>
+      </div>
+
+      <label>Choose Destination</label>
+      <div class="select-box">
+        <select id="destinationSelect"></select>
+      </div>
+
+      <div class="center">
+        <button class="light-btn" onclick="addTrip()">Add Trip</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Popup: Add Activities ========== -->
+  <div class="popup-bg" id="activitiesPopup">
+    <div class="popup popup-small">
+      <button class="popup-close" onclick="closePopup('activitiesPopup')">&times;</button>
+      <h2>Add Activities</h2>
+      <p class="popup-place" id="activitiesPlace"></p>
+
+      <!-- checkboxes are added here by planning.js -->
+      <div class="checks" id="activitiesList"></div>
+
+      <div class="center">
+        <button class="light-btn" onclick="saveActivities()">Add Activities</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Popup: Contact a Travel Office ========== -->
+  <div class="popup-bg" id="officesPopup">
+    <div class="popup">
+      <button class="popup-close" onclick="closePopup('officesPopup')">&times;</button>
+      <h2>Contact a Travel Office</h2>
+      <p class="popup-place">Send your plan to a local office, and they will arrange your activities and hotels.</p>
+
+      <!-- the offices are added here by planning.js -->
+      <div id="officesList"></div>
+    </div>
+  </div>
+
+  <!-- ========== Popup: Create Your Trip? ========== -->
+  <div class="popup-bg" id="confirmPopup">
+    <div class="popup">
+      <h2>Create Your Trip?</h2>
+      <p class="popup-text" id="confirmText"></p>
+
+      <div class="popup-buttons">
+        <button class="light-btn" onclick="closePopup('confirmPopup')">Cancel</button>
+        <button class="dark-btn" onclick="createTrip()">Create Trip</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="places.js"></script>
+  <script src="planning.js"></script>
+  <!-- Firebase: to know if the user is logged in -->
+  <script type="module" src="firebase.js"></script>
+  <!-- Firestore: trips and favorites -->
+  <script type="module" src="data.js"></script>
+</body>
+</html>
