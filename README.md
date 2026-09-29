@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="images/logo.png" alt="TravIris logo" width="150">
-
-# TravIris
+# 🌿 TravIris
 
 ### Explore Jordan's Stories, Places, and Hidden Gems 🇯🇴
 
@@ -20,10 +18,6 @@
 ### 🌐 [Live Demo](https://YOUR-PROJECT-ID.web.app)
 
 </div>
-
-<br>
-
-![TravIris Home](screenshots/home.jpg)
 
 ---
 
@@ -54,45 +48,6 @@ Most travel websites show the same famous places: Petra, Wadi Rum, the Dead Sea.
 | ⭐ | **Feedback** | Rate the website and read what other travelers say |
 | 🎬 | **Animations** | Animated map, fade-up on scroll, and smooth hover effects |
 | 📱 | **Responsive** | Works on desktop, laptop, and mobile |
-
----
-
-## 📸 Screenshots
-
-<table>
-  <tr>
-    <td align="center"><b>Choose Your Mood</b></td>
-    <td align="center"><b>Place Details</b></td>
-  </tr>
-  <tr>
-    <td><img src="screenshots/categories.jpg" alt="Categories"></td>
-    <td><img src="screenshots/place-details.jpg" alt="Place details"></td>
-  </tr>
-  <tr>
-    <td align="center"><b>Build Your Route</b></td>
-    <td align="center"><b>Trip Tickets</b></td>
-  </tr>
-  <tr>
-    <td><img src="screenshots/planning-hero.jpg" alt="Planning page"></td>
-    <td><img src="screenshots/planning.jpg" alt="Days timeline"></td>
-  </tr>
-  <tr>
-    <td align="center"><b>Suggested Plan</b></td>
-    <td align="center"><b>Profile</b></td>
-  </tr>
-  <tr>
-    <td><img src="screenshots/suggested-plan.jpg" alt="Suggested plan"></td>
-    <td><img src="screenshots/profile.jpg" alt="Profile"></td>
-  </tr>
-  <tr>
-    <td align="center"><b>About Us</b></td>
-    <td align="center"><b>Login</b></td>
-  </tr>
-  <tr>
-    <td><img src="screenshots/about.jpg" alt="About"></td>
-    <td><img src="screenshots/login.jpg" alt="Login"></td>
-  </tr>
-</table>
 
 ---
 
@@ -179,8 +134,7 @@ travliris/
 ├── firestore.rules            Security Rules
 ├── firebase.json              Hosting settings
 │
-├── images/
-└── screenshots/
+└── images/
 ```
 
 ---
