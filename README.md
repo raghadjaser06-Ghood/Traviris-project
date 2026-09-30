@@ -161,7 +161,7 @@ Open the folder in VS Code and start it with the **Live Server** extension.
 ```bash
 npm install -g firebase-tools
 firebase login
-firebase deploy --only hosting --project YOUR-PROJECT-ID
+firebase deploy --only hosting --project traviris-6e755
 ```
 
 ---
