@@ -76,7 +76,7 @@ img {
 .hero-title {
   font-size: 250px;
   font-weight: 700;
-  letter-spacing: 25px;
+  letter-spacing: 45px;
   line-height: 1;
   padding-left: 50px;
   margin-top: 50px;
@@ -252,7 +252,7 @@ img {
 
   .hero-title {
     font-size: 170px;
-    letter-spacing: 15px;
+    letter-spacing: 30px;
   }
 
   .hero-buttons {
@@ -304,7 +304,7 @@ img {
 
   .hero-title {
     font-size: 70px;
-    letter-spacing: 4px;
+    letter-spacing: 13px;
     padding-left: 16px;
     margin-top: 40px;
   }
